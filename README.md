@@ -1,6 +1,8 @@
 # pwa-template
 Template files for a progressive web app, to make creating a new PWA quick and easy.
 
+REQUIRES SSL CERTIFICATE AND HTTPS
+
 ## Features:
 
 - Service Worker
