@@ -49,8 +49,5 @@
     "desktop-notification": {
       "description": "Needed for notifying you of any changes to your account."
     }
-  },
-  "related_applications": [{
-    "platform": "web"
-  }]
+  }
 }

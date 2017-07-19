@@ -1,0 +1,111 @@
+.ui-datepicker {
+	padding: 0;
+	background: #f7f7f7 !important;
+	width: 25em;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+
+	.ui-datepicker-prev,
+	.ui-datepicker-next {
+		width: 70px;
+		height: calc(100% - 2px);
+	}
+	.ui-datepicker-prev {
+		top: 1px !important;
+		left: 1px !important;
+	}
+	.ui-datepicker-next {
+		top: 1px !important;
+		right: 1px !important;
+	}
+	.ui-datepicker-next-hover {
+		right: 2px !important;
+	}
+	.ui-icon.ui-icon-circle-triangle-w {
+		background-position: -96px -16px;
+	}
+	.ui-icon.ui-icon-circle-triangle-e {
+		background-position: -32px -16px;
+	}
+	tr:nth-child(odd) {
+		background: none !important;
+	}
+	th {
+		color: #ed1c24;
+		font-size: 10px;
+		padding: 20px 0 8px;
+		text-transform: uppercase;
+		background: none;
+	}
+	td {
+		border: 0;
+		padding: 6px 0;
+		border: 1px solid #ddd;
+		background: white;
+	}
+}
+.ui-widget-header {
+	border: 1px solid #dddddd;
+	background: #e9e9e9;
+	color: #333333;
+	font-weight: bold;
+	background: white;
+	border-style: solid;
+	border-color: #ddd;
+	border-width: 0 0 1px 0;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	background: #eee;
+	border: none;
+	cursor: pointer;
+}
+
+span.ui-datepicker-month {
+	font-weight: normal;
+	text-transform: uppercase;
+}
+span.ui-datepicker-year {
+	display: block;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 10px;
+	margin-bottom: 5px;
+}
+table.ui-datepicker-calendar {
+	width: calc(100% - 20px);
+	margin: 0 auto 10px;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+	background: none;
+	border: none;
+	text-align: center;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	background: #f7f7f7;
+}
+.ui-datepicker td:hover,
+.ui-datepicker-current-day {
+	background: #ed1c24 !important;
+}
+.ui-datepicker td:hover > a,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	color: white;
+}

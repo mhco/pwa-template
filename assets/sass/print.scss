@@ -1,0 +1,35 @@
+@media print {
+	* {
+		box-shadow: none !important;
+	}
+	header,
+	aside#sidebar,
+	.breadcrumbs,
+	.filter,
+	a.btn,
+	button,
+	.dont-print,
+	.tabs [data-tab]
+	{
+		display: none;
+	}
+	.wrapper {
+		max-width: none;
+		width: 100%;
+	}
+	#content {
+		margin: 0;
+	}
+	table td,
+	table th {
+		border-color: rgba(0, 0, 0, 0.1);
+	}
+	tr.problem,
+	tr.problem .status i,
+	tr.problem a,
+	tr.problem i,
+	tr.problem small {
+		color: black !important;
+		font-weight: bold;
+	}
+}

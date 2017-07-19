@@ -1,0 +1,151 @@
+header {
+	background: $background-color;
+	color: white;
+	position: relative;
+	border-bottom: 1px solid #cccccc;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 20px;
+
+	a {
+		color: #ccc;
+	}
+	#logo {
+		position: relative;
+		height: 22px;
+	}
+	#navigation {
+		> #links {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+			background: white;
+			box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+			padding-top: 50px;
+			display: none;
+		}
+		.toggle {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			cursor: pointer;
+			z-index: 20;
+		}
+		&.open {
+			> #links {
+				display: block;
+			}
+			.toggle {
+				color: black;
+			}
+		}
+	}
+	.topnav {
+		a {
+			display: block;
+			color: black;
+			text-decoration: none;
+			line-height: 42px;
+			padding: 5px 15px;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		&:last-child a:last-child {
+			border: none;
+		}
+	}
+	form {
+		display: none;
+	}
+	#logged_in_as {
+		display: none;
+	}
+}
+
+@media (min-width: $first-breakpoint)
+{
+	header {
+		text-align: left;
+
+		#logo {
+			float: none;
+			left: 0;
+			height: 34px;
+			margin-bottom: 0;
+		}
+		#navigation {
+			> #links {
+				position: static;
+				background: transparent;
+				width: calc(100% - 20px);
+				box-shadow: none;
+				display: table;
+				table-layout: fixed;
+				padding-top: 20px;
+			}
+			.toggle {
+				display: none;
+			}
+			&.open {
+				> #links {
+					display: table;
+				}
+			}
+		}
+		.topnav {
+			a {
+				display: inline-block;
+				color: white;
+				padding: 0 10px;
+				position: relative;
+				border: none;
+				line-height: initial;
+			}
+			a:first-child {
+				padding-left: 0;
+			}
+			a:last-child {
+				padding-right: 0;
+			}
+		}
+		form {
+			display: block;
+			margin-bottom: 10px;
+
+			input,
+			button {
+				height: 35px;
+				vertical-align: middle;
+				border: 1px solid #bbb;
+			}
+			input {
+				width: calc(100% - 60px) !important;
+				max-width: 250px;
+				border: none !important;
+				border-radius: 2px 0 0 2px !important;
+			}
+			button {
+				border: none;
+				border-radius: 0 2px 2px 0;
+				margin-right: 5px;
+				padding: 0 8px;
+
+				i {
+					margin: 0 !important;
+				}
+			}
+			a {
+				display: block;
+				line-height: 35px;
+			}
+		}
+		#logged_in_as {
+			display: table-cell;
+			margin-top: 20px;
+		}
+	}
+}

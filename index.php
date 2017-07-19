@@ -35,6 +35,8 @@
 		</div><br>
 
 		<?=time()?>
+		
+        <button type="button" onclick="registerOneTimeSync()">One Time Sync</button>
 
 		<div class='offline-banner'>You are currently offline. While you can view your data, you cannot edit it. Please reconnect to a network in order to proceed.</div>
 		<script>
@@ -43,11 +45,35 @@
 				{
 					navigator.serviceWorker
 					.register('./sw.js')
-					.then(function(e)
-					{
-						//console.log('Service Worker Registered');
+					.then(function(reg) {
+						console.log("ServiceWorker registered ◕‿◕", reg);
+					})
+					.catch(function(error) {
+						console.log("Failed to register ServiceWorker ಠ_ಠ", error);
 					});
 				}
+
+function registerOneTimeSync() {
+    if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.ready.then(function(reg) {
+            if (reg.sync) {
+                reg.sync.register({
+                        tag: 'oneTimeSync'
+                    })
+                    .then(function(event) {
+                        console.log('Sync registration successful', event);
+                    })
+                    .catch(function(error) {
+                        console.log('Sync registration failed', error);
+                    });
+            } else {
+                console.log("Onw time Sync not supported");
+            }
+        });
+    } else {
+        console.log("No active ServiceWorker");
+    }
+}
 
 			/* OFFLINE BANNER */
 				function updateOnlineStatus()

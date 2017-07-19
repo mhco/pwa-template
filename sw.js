@@ -24,6 +24,13 @@ var assetsToCache = [
        '/assets/images/logo.svg'
 ];
 
+self.addEventListener('sync', function(event) {
+    if (event.registration.tag == "oneTimeSync") {
+        console.dir(self.registration);
+        console.log("One Time Sync Fired");
+    }
+});
+
 self.addEventListener('install', function(event) {
   // waitUntil() ensures that the Service Worker will not
   // install until the code inside has successfully occurred
